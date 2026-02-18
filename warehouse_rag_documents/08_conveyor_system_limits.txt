@@ -1,0 +1,5 @@
+Title: Conveyor System Limits
+
+Maximum load per section: 50 kg.
+Do not exceed speed limits of 1.0 m/s.
+Regularly inspect belt alignment and tension.

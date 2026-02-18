@@ -1,0 +1,7 @@
+Title: Hazardous Material Handling
+
+Hazardous materials must not be tilted beyond 30 degrees.
+Activate safety mode before transport.
+Ensure a safety clearance of at least 1 meter.
+Wear protective handling configuration when transporting chemicals.
+Follow hazardous spill containment procedures if leakage occurs.

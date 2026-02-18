@@ -1,0 +1,5 @@
+Title: Collision Avoidance Protocol
+
+Maintain minimum 30 cm distance from obstacles.
+Use LiDAR and camera fusion for detection.
+Reduce speed in high-density storage zones.

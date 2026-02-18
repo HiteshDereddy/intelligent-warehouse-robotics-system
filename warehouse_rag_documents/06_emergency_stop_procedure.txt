@@ -1,0 +1,6 @@
+Title: Emergency Stop Procedure
+
+In case of instability, stop immediately.
+Release object slowly and safely.
+Notify control system and supervisor.
+Inspect gripper and sensors before resuming operation.

@@ -1,0 +1,5 @@
+Title: Temperature-Sensitive Item Handling
+
+Maintain temperature between 2°C and 8°C.
+Use insulated storage containers.
+Minimize exposure time outside controlled areas.

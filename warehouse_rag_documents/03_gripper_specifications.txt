@@ -1,0 +1,6 @@
+Title: Gripper Arm Specifications
+
+Maximum weight capacity: 25 kg.
+Maximum extension length: 1.2 meters.
+Maximum torque rating: 45 Nm.
+Recommended operational temperature: 0°C to 45°C.

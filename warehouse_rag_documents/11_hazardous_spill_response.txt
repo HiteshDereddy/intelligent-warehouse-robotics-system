@@ -1,0 +1,6 @@
+Title: Hazardous Spill Response
+
+Stop robot immediately.
+Activate containment protocol.
+Notify safety supervisor.
+Avoid contact with spilled material.

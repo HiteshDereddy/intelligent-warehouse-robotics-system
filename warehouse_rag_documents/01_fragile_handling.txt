@@ -1,0 +1,7 @@
+Title: Fragile Item Handling Protocol
+
+Fragile items must be transported with reduced acceleration.
+Maximum movement speed should not exceed 0.5 m/s.
+Enable soft-grip mode while handling fragile packages.
+Do not stack fragile items under heavy loads.
+Maintain minimal vibration during transport.
