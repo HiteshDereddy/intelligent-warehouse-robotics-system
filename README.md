@@ -1,158 +1,190 @@
 # Intelligent Warehouse Object Recognition & Safety Query System
 
-End-to-end system that detects warehouse objects, classifies them into safety categories, and answers handling-related questions using a Retrieval-Augmented Generation (RAG) pipeline.
+An end-to-end intelligent warehouse assistant that detects objects, classifies them into safety categories, retrieves relevant documentation, and generates grounded safety responses using a Retrieval-Augmented Generation (RAG) pipeline.
 
 ---
 
-## Problem Statement
+# Problem Statement
 
-Build an intelligent warehouse assistant that:
+Develop an intelligent system that:
 
-1. Detects objects from images
-2. Classifies them as:
+1. Detects warehouse objects from images
+2. Classifies them into:
    - Fragile
    - Hazardous
    - Standard
-3. Retrieves relevant warehouse documentation
-4. Answers natural language safety queries grounded in documentation
+3. Retrieves relevant warehouse safety documentation
+4. Answers natural language safety-related questions grounded in documentation
 
 ---
 
-## System Architecture
+# System Architecture
 
-Image  
-→ YOLO Detection  
-→ CNN Classification (EfficientNet-B0)  
-→ Detection Metadata  
-→ FAISS Retrieval  
-→ TinyLlama (LLM)  
-→ Grounded Safety Response  
-
----
-
-## Project Structure
-
-# Intelligent Warehouse Object Recognition & Safety Query System
-
-End-to-end system that detects warehouse objects, classifies them into safety categories, and answers handling-related questions using a Retrieval-Augmented Generation (RAG) pipeline.
-
----
-
-## Problem Statement
-
-Build an intelligent warehouse assistant that:
-
-1. Detects objects from images
-2. Classifies them as:
-   - Fragile
-   - Hazardous
-   - Standard
-3. Retrieves relevant warehouse documentation
-4. Answers natural language safety queries grounded in documentation
+```
+Image
+   ↓
+YOLO Detection
+   ↓
+CNN Classification (EfficientNet-B0)
+   ↓
+Detection Metadata Injection
+   ↓
+FAISS Retrieval
+   ↓
+TinyLlama (LLM)
+   ↓
+Grounded Safety Response
+```
 
 ---
 
-## System Architecture
+# 📁 Project Structure
 
-Image  
-→ YOLO Detection  
-→ CNN Classification (EfficientNet-B0)  
-→ Detection Metadata  
-→ FAISS Retrieval  
-→ TinyLlama (LLM)  
-→ Grounded Safety Response  
-
----
-
-## Project Structure
-
-# Intelligent Warehouse Object Recognition & Safety Query System
-
-End-to-end system that detects warehouse objects, classifies them into safety categories, and answers handling-related questions using a Retrieval-Augmented Generation (RAG) pipeline.
-
----
-
-## Problem Statement
-
-Build an intelligent warehouse assistant that:
-
-1. Detects objects from images
-2. Classifies them as:
-   - Fragile
-   - Hazardous
-   - Standard
-3. Retrieves relevant warehouse documentation
-4. Answers natural language safety queries grounded in documentation
-
----
-
-## System Architecture
-
-Image  
-→ YOLO Detection  
-→ CNN Classification (EfficientNet-B0)  
-→ Detection Metadata  
-→ FAISS Retrieval  
-→ TinyLlama (LLM)  
-→ Grounded Safety Response  
+```
+warehouse-intelligent-system/
+│
+├── openCV_detector.py
+│   
+│
+├── train_cnn.py
+│   
+│
+├── rag_system.py
+│  
+│
+├── integration_full_fixed.py
+│ 
+│
+├── warehouse_rag_documents/
+│   └── 10–15 warehouse documentation files (.txt)
+│
+├── models/
+│   ├── best-2.pt
+│   └── best_cnn_model.pth
+│
+│
+├── results/
+│   ├── confusion_matrix.png
+│   ├── metrics.txt
+│   └── demo_screenshots/
+│
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## Project Structure
+# 🖥️ Installation
 
-part1_classical_cv/
-part2_cnn_classifier/
-part3_rag_system/
-part4_integration/
-results/
-requirements.txt
-README.md
+### 1️⃣ Clone Repository
 
+```bash
+git clone https://github.com/HiteshDereddy/intelligent-warehouse-robotics-system
+cd warehouse-intelligent-system
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-## Part 1 – Classical Computer Vision
+# How to Run Each Component
 
-Technique Used:
-- Template Matching / Feature Detection (ORB)
+---
+
+## Part 1 – Classical Computer Vision (OpenCV)
+
+```bash
+python openCV_detector.py
+```
 
 Outputs:
-- Bounding box coordinates
-- Object dimensions (pixels)
+- Bounding boxes
+- Pixel dimensions
 - Center coordinates
-
-Purpose:
-- Lightweight object recognition without training
-- Demonstrates foundational CV knowledge
-
-Limitations:
-- Sensitive to scale and lighting variations
+- Saved detection images in `results/`
 
 ---
 
-## Part 2 – CNN Object Classification
+## Part 2 – CNN Classification
 
-Model:
-- EfficientNet-B0
-- Input: 224×224
-- Classes: Fragile, Hazardous, Standard
+### Train Model
 
-### Test Performance
+```bash
+python train_cnn.py
+```
 
-| Class      | Precision | Recall | F1 |
-|------------|-----------|--------|----|
-| Fragile    | 1.00      | 1.00   | 1.00 |
-| Hazardous  | 1.00      | 1.00   | 1.00 |
-| Standard   | 1.00      | 1.00   | 1.00 |
+Outputs:
+- Saved model (`CNNModel.pth`)
+- Confusion matrix (`results/confusion_matrix.png`)
+- Metrics file (`results/metrics.txt`)
 
-Overall Accuracy: **99%**
+### Inference
+
+```python
+predict_image("sample.jpg")
+```
+
+Displays:
+- Input image
+- Predicted class
+- Confidence score
 
 ---
 
-## Part 3 – Retrieval-Augmented Generation (RAG)
+## Part 3 – RAG System
+
+```bash
+python rag_system.py
+```
+
+Example queries:
+- How should the robot handle fragile items?
+- What is the maximum weight capacity of the gripper?
+- What safety checks are required before moving hazardous materials?
+
+---
+
+## Part 4 – Integrated System
+
+```bash
+python integration_full_fixed.py
+```
+
+Workflow:
+1. Input image
+2. YOLO detection
+3. CNN classification
+4. User safety query
+5. FAISS retrieval
+6. TinyLlama generates grounded response
+
+---
+
+# Model Performance (CNN)
+
+| Class      | Precision | Recall | F1-score |
+|------------|-----------|--------|----------|
+| Fragile    | 1.00      | 1.00   | 1.00     |
+| Hazardous  | 1.00      | 1.00   | 1.00     |
+| Standard   | 1.00      | 1.00   | 1.00     |
+
+**Overall Accuracy: 99%**
+
+Confusion matrix available in:
+```
+results/confusion_matrix.png
+```
+
+---
+
+# RAG System Details
 
 Embedding Model:
-- all-MiniLM-L6-v2
+- `all-MiniLM-L6-v2`
 
 Vector Store:
 - FAISS (L2 similarity)
@@ -162,65 +194,67 @@ LLM:
 - Deterministic decoding (temperature = 0)
 
 Pipeline:
-1. Embed warehouse documents
-2. Enrich query with detected class
-3. Retrieve top-k relevant docs
-4. Generate grounded answer
+1. Chunk warehouse documents
+2. Embed documents
+3. Retrieve top-k relevant chunks
+4. Inject detection metadata
+5. Generate context-grounded response
 
 ---
 
-## Part 4 – Integrated System
+# Key Design Decisions
 
-Workflow:
-1. User inputs image
-2. YOLO detects object
-3. CNN classifies object
-4. User asks safety question
-5. System retrieves documentation
-6. LLM generates context-grounded response
-
-Run integration:
-
-
----
-
-## Installation
-
-Install dependencies:
-pip install -r requirements.txt
-
-
----
-
-## Key Design Decisions
-
-- Classical CV included to satisfy foundational requirement
-- EfficientNet chosen for lightweight accuracy
-- Detection class injected into retrieval query
+- Classical CV included to demonstrate foundational OpenCV knowledge
+- EfficientNet-B0 selected for lightweight transfer learning
+- Detection class injected into retrieval query for contextual grounding
 - Deterministic decoding used to reduce hallucination
-- Modular structure for clarity and scalability
+- Modular architecture for clarity and maintainability
 
 ---
 
-## Limitations
+# Challenges Faced & Solutions
 
-- Sensitive to lighting and occlusion
-- Template matching not rotation-invariant
-- LLM reasoning limited by 1.1B parameter size
-- RAG limited by document coverage
+### 1. Class Imbalance
+Some safety categories had fewer samples.
+→ Addressed through proper train/validation/test splits and monitoring F1-score.
+
+### 2. Bounding Box Cropping Errors
+Incorrect crops reduced CNN confidence.
+→ Implemented bounding box padding and fallback full-image classification.
+
+### 3. Hallucination in LLM
+LLM sometimes generated information not in documents.
+→ Used strict prompt instructions and deterministic decoding (temperature = 0).
+
+### 4. Retrieval Irrelevance
+Generic queries retrieved unrelated documents.
+→ Injected detected class label into embedding query for contextual narrowing.
 
 ---
 
-## Future Improvements
+# Results Folder Contents
 
-- Upgrade to Llama-3.2-3B-Instruct
-- Hybrid keyword + vector retrieval
-- Web-based UI
-- Real-time camera feed integration
+The `results/` directory contains:
+
+- Confusion matrix
+- Performance metrics
+- Detection screenshots
+- RAG response examples
+- Integration demo screenshots
 
 ---
 
-## Technologies Used
+# Future Improvements
+
+- Upgrade to larger instruction-tuned LLM (e.g., Llama 3 series)
+- Hybrid retrieval (keyword + vector search)
+- Real-time camera stream integration
+- Web-based user interface
+- Multi-object scene reasoning
+
+---
+
+# Technologies Used
 
 - Python
 - PyTorch
@@ -232,7 +266,17 @@ pip install -r requirements.txt
 
 ---
 
-## Status
+# Demo
 
-Complete end-to-end working prototype with interactive CLI interface.
+A 5-minute demonstration video is included with submission, showcasing:
 
+- Object detection
+- CNN classification
+- RAG-based query answering
+- Full integrated workflow
+
+---
+
+# Status
+
+Complete end-to-end working prototype with modular architecture and interactive CLI interface.
