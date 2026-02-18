@@ -142,8 +142,8 @@ Model:
 | Class      | Precision | Recall | F1 |
 |------------|-----------|--------|----|
 | Fragile    | 1.00      | 1.00   | 1.00 |
-| Hazardous  | 1.00      | 0.92   | 0.96 |
-| Standard   | 0.99      | 1.00   | 1.00 |
+| Hazardous  | 1.00      | 1.00   | 1.00 |
+| Standard   | 1.00      | 1.00   | 1.00 |
 
 Overall Accuracy: **99%**
 
