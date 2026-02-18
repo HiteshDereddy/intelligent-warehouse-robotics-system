@@ -30,7 +30,7 @@ Image
 
 ---
 
-## 🔹 Project Structure
+## Project Structure
 
 # Intelligent Warehouse Object Recognition & Safety Query System
 
@@ -38,7 +38,7 @@ End-to-end system that detects warehouse objects, classifies them into safety ca
 
 ---
 
-## 🔹 Problem Statement
+## Problem Statement
 
 Build an intelligent warehouse assistant that:
 
@@ -52,7 +52,7 @@ Build an intelligent warehouse assistant that:
 
 ---
 
-## 🔹 System Architecture
+## System Architecture
 
 Image  
 → YOLO Detection  
@@ -64,7 +64,7 @@ Image
 
 ---
 
-## 🔹 Project Structure
+## Project Structure
 
 # Intelligent Warehouse Object Recognition & Safety Query System
 
@@ -72,7 +72,7 @@ End-to-end system that detects warehouse objects, classifies them into safety ca
 
 ---
 
-## 🔹 Problem Statement
+## Problem Statement
 
 Build an intelligent warehouse assistant that:
 
@@ -86,7 +86,7 @@ Build an intelligent warehouse assistant that:
 
 ---
 
-## 🔹 System Architecture
+## System Architecture
 
 Image  
 → YOLO Detection  
@@ -98,7 +98,7 @@ Image
 
 ---
 
-## 🔹 Project Structure
+## Project Structure
 
 part1_classical_cv/
 part2_cnn_classifier/
@@ -111,7 +111,7 @@ README.md
 
 ---
 
-## 🔹 Part 1 – Classical Computer Vision
+## Part 1 – Classical Computer Vision
 
 Technique Used:
 - Template Matching / Feature Detection (ORB)
@@ -130,7 +130,7 @@ Limitations:
 
 ---
 
-## 🔹 Part 2 – CNN Object Classification
+## Part 2 – CNN Object Classification
 
 Model:
 - EfficientNet-B0
@@ -149,7 +149,7 @@ Overall Accuracy: **99%**
 
 ---
 
-## 🔹 Part 3 – Retrieval-Augmented Generation (RAG)
+## Part 3 – Retrieval-Augmented Generation (RAG)
 
 Embedding Model:
 - all-MiniLM-L6-v2
@@ -169,7 +169,7 @@ Pipeline:
 
 ---
 
-## 🔹 Part 4 – Integrated System
+## Part 4 – Integrated System
 
 Workflow:
 1. User inputs image
@@ -192,7 +192,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔹 Key Design Decisions
+## Key Design Decisions
 
 - Classical CV included to satisfy foundational requirement
 - EfficientNet chosen for lightweight accuracy
@@ -202,7 +202,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔹 Limitations
+## Limitations
 
 - Sensitive to lighting and occlusion
 - Template matching not rotation-invariant
@@ -211,7 +211,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔹 Future Improvements
+## Future Improvements
 
 - Upgrade to Llama-3.2-3B-Instruct
 - Hybrid keyword + vector retrieval
@@ -220,7 +220,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔹 Technologies Used
+## Technologies Used
 
 - Python
 - PyTorch
@@ -232,7 +232,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔹 Status
+## Status
 
 Complete end-to-end working prototype with interactive CLI interface.
 
